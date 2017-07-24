@@ -81,3 +81,64 @@ else:
 alien_0['x_position'] = alien_0['x_position'] + x_increment
 
 print("New x-position: " + str(alien_0['x_position']))
+
+## Removing Key-Value Pairs
+## When you no longer need a piece of information that's stored in a
+## dictionary, you can use the del statement to completely remove a
+## key-value pair. 
+alien_0 = {'color': 'green', 'points': 5}
+print(alien_0)
+
+del alien_0['points']
+print(alien_0)
+
+## A Dictionary of Similar Objects
+## The previous example involved storing different kinds of information
+## about one object, an alien in a game. YOu can also use a dictionary
+## to store one kind of information about many objects.
+favorite_languages = {
+	'jen': 'python',
+	'sarah': 'c',
+	'edward': 'ruby',
+	'phil': 'python',
+}
+## When you know you'll need more than one line to define a dictionary,
+## press enter after the opening brace. Then follow the format we used 
+## above (indent, key-value pair, comma, new line). Then put the closing
+## brace on a new line after the last key-value pair. 
+
+print("Sara's favorite language is " + 
+	favorite_languages['sarah'].title() +
+	".")
+## This example also shows how you can break up a long print statement
+## over several lines. 
+
+## Looping Through a Dictionary
+##	Looping Through All Key-Value Pairs
+##	Lets consider a new dictionary designed to store information about a
+##	user on a website. The following dictionary would store one person's
+##	username, first name, and last name.
+
+user_0 = {
+	'username': 'efermi',
+	'first': 'enrico',
+	'last': 'fermi',
+}
+# We already know how to access any single piece of information about
+# user_0 based on what we've learned so far in this chapter. If we want
+# to see everything stored in this user's dictionary we can use a for loop.
+
+for key, value in user_0.items():
+	print("\nKey: " + key)
+	print("Value: " + value)
+
+# To write a for loop for a dictionary, you create names for the two
+# variables that will hold the key and value in each key-value pair. The
+# variables can be named whatever you wish. for k, v in user_0.items()
+# would also work. The .items() method returns a list of key-value pairs.
+# You'll notice the key-value pairs are not printed in the order that
+# they're stored. 
+
+for name, language in favorite_languages.items():
+	print("\nName: " + name)
+	print("Language: " + language)
