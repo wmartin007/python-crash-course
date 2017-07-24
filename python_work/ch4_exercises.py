@@ -90,3 +90,48 @@ for value in range(1,11):
 
 cubes_list = [value**3 for value in range(1,11)]
 print(cubes_list)
+
+## 4.10 Slices
+## Using one of the programs you wrote in this chapter, add 
+## several lines to the end of the program that do the following:
+
+## Print the first three items in the list
+print(cubes[:3])
+
+## Print three items from the middle of the list
+print(cubes[2:5])
+
+## Print the last three items in the list
+print(cubes[-3:])
+
+## 4.11
+## Start with the program from 4.1. Make a copy of the list of pizzas 
+## and call it friend_pizzas, then do the following:
+## add a new pizza to the original list
+## add a different pizza to the friend_pizzas list
+friend_pizzas = pizzas[:]
+pizzas.append('supreme')
+friend_pizzas.append('hawaiian')
+print("My favorite pizzas are:")
+for pizza in pizzas:
+	print(pizza)
+print("\nMy friend's favorite pizzas are:")
+for pizza in friend_pizzas:
+	print(pizza)
+
+## 4.12
+## More Loops
+
+## 4.13 Buffet
+## Store 5 simple basic foods that a buffet might offer in a tuple
+buffet = ('fried chicken', 'mashed potatoes', 'corn', 'hamburgers', 'french fries')
+print("\n\nThe buffet consists of:")
+for food in buffet:
+	print(food)
+
+## Restaurant changes it's menu. Replace 2 of the items with different foods
+
+buffet = ('baked chicken', 'french fries', 'corn', 'hamburgers', 'french fries')
+print("\nThe new buffet menu is:")
+for food in buffet:
+	print(food)
