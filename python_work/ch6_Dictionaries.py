@@ -140,5 +140,20 @@ for key, value in user_0.items():
 # they're stored. 
 
 for name, language in favorite_languages.items():
-	print("\nName: " + name)
-	print("Language: " + language)
+	print(name.title() + "'s favorite language is " + language.title()+
+	".")
+
+## Looping Through All the Keys in a Dictionary
+## The keys() method is usefull when you don't need to work with all
+## values in a dictionary.
+
+for name in favorite_languages.keys():
+	print(name.title())
+
+## Looping through keys is actually the default behaviror when looping
+## through a dictionary, so the code would have exactly the same output
+## if you wrote: for name in favorite_languages and left out the .keys()
+
+
+
+
