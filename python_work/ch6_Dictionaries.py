@@ -155,5 +155,157 @@ for name in favorite_languages.keys():
 ## if you wrote: for name in favorite_languages and left out the .keys()
 
 
+## Let's print a message to some friends about the languages they chose
 
+friends = ['phil', 'sarah']
+for name in favorite_languages.keys():
+	print(name.title())
+	
+	if name in friends:
+		print(" Hi " + name.title() + ", I see your favorite language "+
+		"is " + favorite_languages[name].title() + "!")
 
+## You can use the keys() method to find out if a particular person was
+## polled. This time, let's find out if Erin took the poll:
+
+if 'erin' not in favorite_languages.keys():
+	print("Erin, please take our poll!")
+
+## Looping Through a Dictionary's Keys in Order
+## You can use the sorted() function to get a copy of the keys in order
+
+for name in sorted(favorite_languages.keys()):
+	print(name.title() + ", thank you for taking the poll.")
+
+## Looping Through All Values in a Dictionary
+## The values() method will return a list of values without any keys.
+
+print("The following languages have been mentioned:")
+for language in favorite_languages.values():
+	print(language.title())
+## This will return a list without checking for duplicates. To avoid
+## the repetition, we can use a set. A set is similar to a list except
+## that each item in a set must be unique.
+
+for language in set(favorite_languages.values()):
+	print(language.title())
+
+## Nesting
+## Nesting is when you store a set of dictionaries in a list or a list
+## of items as a value in a dictionary. You can nest a set of 
+## dictionaries inside a list, a list of items in a dictionary, or even
+## a dictionary inside another dictionary.
+
+alien_0 = {'color': 'green', 'points': 5}
+alien_1 = {'color': 'yellow', 'points': 10}
+alien_2 = {'color': 'red', 'points': 15}
+
+aliens = [alien_0, alien_1, alien_2]
+for alien in aliens:
+	print(alien)
+
+# A more realistic example would involve more than three aliens with 
+# code that automatically generates each alien. We'll use range to 
+# generate a fleet of 30 aliens.
+
+# Make an empty list for storing aliens
+aliens = []
+# Make 30 green aliens.
+for alien_number in range(30):
+	new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+	aliens.append(new_alien)
+# Show the first 5 aliens:
+for alien in aliens[:5]:
+	print(alien)
+print("...")
+# Show how many aliens have been created.
+print("Total number of aliens: " + str(len(aliens)))
+
+# Let's assume the game progresses and now we want the first 3 aliens
+# to change to yellow.
+
+for alien in aliens[0:3]:
+	if alien['color'] == 'green':
+		alien['color'] = 'yellow'
+		alien['speed'] = 'medium'
+		alien['points'] = 10
+# Show first 5 aliens
+for alien in aliens[0:5]:
+	print(alien)
+print("...")
+
+# It's common to store a number of dictionaries in a list when each 
+# dictionary contains many kinds of information about one object, as we 
+# did when we created a dictionary for each user on a website. All of
+# the dictionaries in a list should have an identical stucture so you 
+# can loop through the list and work with each dictionary object in the
+# same way.
+
+## A List in a Dictionary
+
+# Rather than putting a dictionary inside a list, it's sometimes useful
+# to put a list inside a dictionary. For example, consider describing a
+# pizza someone might be ordering. In a list you can only really store 
+# the toppings, but in a dictionary that can be just one aspect of the
+# pizza you're describing.
+pizza = {
+	'crust': 'thick',
+	'toppings': ['mushrooms', 'extra cheese'],
+}
+# Summarize the order
+print("You ordered a " + pizza['crust'] + "-crust pizza with the "
+	+ "following toppings:")
+
+for topping in pizza['toppings']:
+	print("\t" + topping)
+
+# You can nest a list inside a dictionary any time you want more than
+# one value to be associated with a single key in the dictionary. Suppose
+# we allowed more than one favorite language to be chosen in our previous
+# example of favorite programming languages.
+favorite_languages = {
+	'jen': ['python', 'ruby'],
+	'sarah': ['c'],
+	'edwards': ['ruby', 'go'],
+	'phil': ['python', 'haskell'],
+}
+
+for name, languages in favorite_languages.items():
+	print("\n" + name.title() + "'s favorite languages are:")
+	for language in languages:
+		print("\t" + language.title())
+
+# You can refine this program futher by including an if statement at the
+# beginning of the dictionary's for loop to see whether each person has
+# more than one favorite language by checking the value of len(languages).
+
+# NOTE: You should not nest lists and dictionaries too deeply. If you're
+# nesting items much deeper than the preceding examples, most likely a
+# simpler way to solve the problem exists.
+
+## A Dictionary in a Dictionary
+
+# You can nest a dictionary inside another dictionary, but your code
+# can get complicated quickly. 
+
+users = {
+	'aeinstein': {
+		'first': 'albert',
+		'last': 'einstein',
+		'location': 'princeton',
+		},
+	'mcurie': {
+		'first': 'marie',
+		'last': 'curie',
+		'location': 'paris',
+		},
+	
+	}
+
+for username, user_info in users.items():
+	print("\nUsername: " + username)
+	full_name = user_info['first'] + " " + user_info['last']
+	location = user_info['location']
+	
+	print("\tFull name: " + full_name.title())
+	print("\tLocation: " + location.title())
