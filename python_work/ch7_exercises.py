@@ -75,5 +75,61 @@ while True:
 
 sandwich_orders = ['turkey', 'italian',  'blt', 'grilled cheese']
 
+finished_sandwiches = []
+
+while sandwich_orders:
+	print("Making your sandwich...")
+	current_sandwich = sandwich_orders.pop()
+	print("I'm finished making your sandwich.")
+	finished_sandwiches.append(current_sandwich)
+
+print("\nThe following sandwiches were made:")
+for sandwich in finished_sandwiches:
+	print(sandwich)
 
 
+## 7.9 No Pastrami
+#Using the list sandwich_orders from Exercise 7-8, make sure
+#the sandwich 'pastrami' appears in the list at least three times. Add code
+#near the beginning of your program to print a message saying the deli has
+#run out of pastrami, and then use a while loop to remove all occurrences of
+#'pastrami' from sandwich_orders. Make sure no pastrami sandwiches end up
+#in finished_sandwiches.
+
+sandwich_orders = ['turkey', 'italian',  'blt', 'grilled cheese']
+sandwich_orders.extend(['pastrami']*3)
+finished_sandwiches = []
+print("I'm sorry, but we're out of pastrami today.")
+while 'pastrami' in sandwich_orders:
+	sandwich_orders.remove('pastrami')
+
+while sandwich_orders:	
+	print("Making your sandwich...")
+	current_sandwich = sandwich_orders.pop()
+	print("I'm finished making your sandwich.")
+	finished_sandwiches.append(current_sandwich)
+
+print("\nThe following sandwiches were made:")
+for sandwich in finished_sandwiches:
+	print(sandwich)
+
+## 7.10 Dream Vacation
+#Write a program that polls users about their dream
+#vacation. Write a prompt similar to If you could visit one place in the world,
+#where would you go? Include a block of code that prints the results of the poll.
+
+#Establishing empty dictionary to hold user responses
+dream_vac = {}
+
+#Set flag to indicate polling is active
+polling = True
+
+while polling:
+	#Prompt for person's name and response.
+	name = input("\nWhat is your name?")
+	response = input("\nWhat is your dream vacation location?")
+	
+	#Store the response in the dictionary
+	responses[name] = response
+	
+	#Ask if anyone else is taking the poll.
