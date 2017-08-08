@@ -126,10 +126,19 @@ polling = True
 
 while polling:
 	#Prompt for person's name and response.
-	name = input("\nWhat is your name?")
-	response = input("\nWhat is your dream vacation location?")
+	name = input("\nWhat is your name? ")
+	response = input("\nWhat is your dream vacation location? ")
 	
 	#Store the response in the dictionary
-	responses[name] = response
+	dream_vac[name] = response
 	
 	#Ask if anyone else is taking the poll.
+	repeat = input("Would you like anyone else to take the poll? (yes/no) ")
+	if repeat == 'no':
+		polling = False
+
+#Polling is complete. Show the results.
+print("\n--- Poll Results ----")
+for name, response in dream_vac.items():
+	print(name + "'s dream vacation is to go to " + response + ".")
+
