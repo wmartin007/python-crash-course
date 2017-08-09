@@ -64,3 +64,85 @@ def describe_pet(pet_name, animal_type='dog'):
     print("My " + animal_type + "'s name is " + pet_name.title() + ".")
 
 describe_pet('ernie') #pet_name = 'ernie' also works
+
+
+# Equivalent Function Calls
+#Because positional arguments, keyword arguments, and default values can all be
+#used together, often you'll have several equivalent ways to call a function.
+#Consdier the following def for describe_pets() with one default value
+#provided: def describe_pet(pet_name, animal_type = 'dog'). With this definition
+#an argument always needs to be provide for pet name, and this value can be
+#provided using the positional or keyword format.
+
+# Avoiding Argument Errors
+#You'll undoubtedly encounter errors about unmatched arguments. For example,
+#if we try to call describe_pets() without any arguments, Python will give us
+#an error saying information is missing from the function call.
+
+# Return Values
+#A function doesn't always have to display its output directly. Instead, it can
+#process some data and then return a value or set of values. The value a
+#function returns is called a return value. The return statement takes a value
+#from inside a fucntion and sends it back to the line that called the function.
+#Return values allow you to move much of your program's grunt work into
+#functions, which can simplify the body of your program.
+
+# Returning a Simple Value
+
+def get_formatted_name(first_name, last_name):
+    """Return a full name, neatly formatted"""
+    full_name = first_name + ' ' + last_name
+    return full_name.title()
+
+print('\n')
+musician = get_formatted_name('jimi', 'hendrix')
+print(musician)
+
+#When you call a function that returns a value, you need to provide a variable
+# where the return value can be stored.
+
+# Making an Argument Optional
+#Sometimes it makes sense to make an argument optional so that people using
+#the function can choose to provide extra information only if they want to.
+#Here's an attempt at including a middle name in our previous function:
+
+def get_formatted_name(first_name, middle_name, last_name):
+    full_name = first_name + ' ' + middle_name + ' ' + last_name
+    return full_name.title()
+
+musician = get_formatted_name('john', 'lee', 'hooker')
+print(musician)
+
+#However, middle names aren't always needed, and this function wouldn't work
+#as is without all three arguments. To make middle name optional, we can give
+#the middle name argument an empty default value and ignore the argument unless
+#the user provides a value. We also need to move it to the end of the list of
+#parameters.
+
+def get_formatted_name(first_name, last_name, middle_name = ''):
+    """Return a full name, neatly formatted"""
+    if middle_name:
+        full_name = first_name + ' ' + middle_name + ' ' + last_name
+    else:
+        full_name = first_name + ' ' + last_name
+    return full_name.title()
+
+print('\n')
+musician = get_formatted_name('jimi', 'hendrix')
+print(musician)
+musician = get_formatted_name('john','hooker','lee')
+print(musician)
+
+# Returning a Dictionary
+#A fucntion can return any kind of value you need it to, including more
+#complicated data structures like lists and dictionaries.
+
+def build_person(first_name, last_name):
+    """Return a dictionary o information about a person"""
+    person = {'first': first_name, 'last': last_name}
+    return person
+
+musician = build_person('jimi','hendrix')
+print(musician)
+
+#We canE$w
