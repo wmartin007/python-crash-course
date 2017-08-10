@@ -134,7 +134,7 @@ musician = get_formatted_name('john','hooker','lee')
 print(musician)
 
 # Returning a Dictionary
-#A fucntion can return any kind of value you need it to, including more
+#A function can return any kind of value you need it to, including more
 #complicated data structures like lists and dictionaries.
 
 def build_person(first_name, last_name):
@@ -145,4 +145,41 @@ def build_person(first_name, last_name):
 musician = build_person('jimi','hendrix')
 print(musician)
 
-#We canE$w
+#We can extend this function to accept optional values like middle name, age,
+#occpuation, or any other information you want to store about a person. Ex:
+
+def build_person(first_name, last_name, age = ''):
+    """Return a dictionary of information about a person"""
+    person = {'first': first_name, 'last': last_name}
+    if age:
+        person['age'] = age
+    return person
+
+musician = build_person('jimi', 'hendrix', age = 27)
+print(musician)
+
+##Using a Function with a while Loop
+#You can use functions with all the Python structures we've learned about so
+#far. For example, let's use the get_formatted_name() function with a while
+#loop to greet users more formally.
+
+def get_formatted_name(first_name, last_name):
+    """Return a full name, neatly formatted."""
+    full_name = first_name + ' ' + last_name
+    return full_name.title()
+
+
+while True:
+    print("\nPlease tell me your name: ")
+    print("(enter 'q' at any time to quit)")
+
+    f_name = input("First Name: ")
+    if f_name == 'q':
+        break
+
+    l_name = input("Last Name: ")
+    if l_name == 'q':
+        break
+
+    formatted_name = get_formatted_name(f_name, l_name)
+    print("\nHello, " + formatted_name + "!")
