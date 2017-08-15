@@ -59,3 +59,8 @@ describe_city('Atlanta')
 describe_city('las vegas')
 describe_city('paris','france')
 
+
+def city_country(city, country):
+    return(city.title() + ", " + country.title())
+
+print(city_country('santiago', 'chile'))
