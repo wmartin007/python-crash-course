@@ -254,3 +254,13 @@ show_completed_models(completed_models)
 #a copy of the list instead of the list itself to the function like this:
 # function_name(list_name[:]) - the slice notation makes a copy of the list
 #to send to the function.
+
+
+## Passing an Arbitrary Number of Arguments
+#Sometimes you won't know ahead of time how many arguments a fucntion needs to
+#accept. Pythons allows a function to collect an arbitrary number of arguments
+#from the calling statement.
+
+#Lets consider a function that builds a pizza. It needs to accept a number
+#of toppings, but you can't know ahead of time how many toppings a person will
+#want. The function in the following has one parameter, *toppings, but it will 

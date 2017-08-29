@@ -121,4 +121,21 @@ while True:
 
     print(make_album(artist, album, tracks))
 
+## 8.9
+# Make a list of magician’s names. Pass the list to a function
+# called show_magicians(), which prints the name of each magician in the list.
 
+magicians = ['william', 'luke', 'allie']
+
+def show_magicians(names):
+    for name in names:
+        print(name.title())
+
+show_magicians(magicians)
+greats = []
+def make_great(names):
+    for name in names:
+            greats.append(name.title() + ' the Great')
+
+make_great(magicians)
+print(greats)
