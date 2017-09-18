@@ -243,6 +243,7 @@ unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
 completed_models = []
 
 print_models(unprinted_designs, completed_models)
+
 show_completed_models(completed_models)
 
 #The output is the same as the version without functions, but the code is more
@@ -263,4 +264,14 @@ show_completed_models(completed_models)
 
 #Lets consider a function that builds a pizza. It needs to accept a number
 #of toppings, but you can't know ahead of time how many toppings a person will
-#want. The function in the following has one parameter, *toppings, but it will 
+#want. The function in the following has one parameter, *toppings, but it will
+#collect as many arguments as the calling line provides.
+
+def make_pizza(*toppings):
+    """Print the list of toppings that have been requested"""
+    print(toppings)
+
+make_pizza('pepperoni')
+make_pizza('mushrooms', 'green peppers', 'extra cheese')
+
+
