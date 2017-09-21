@@ -267,11 +267,20 @@ show_completed_models(completed_models)
 #want. The function in the following has one parameter, *toppings, but it will
 #collect as many arguments as the calling line provides.
 
-def make_pizza(*toppings):
-    """Print the list of toppings that have been requested"""
-    print(toppings)
+# def make_pizza(*toppings):
+#     """Print the list of toppings that have been requested"""
+#     print(toppings)
+#
+# make_pizza('pepperoni')
+# make_pizza('mushrooms', 'green peppers', 'extra cheese')
 
-make_pizza('pepperoni')
-make_pizza('mushrooms', 'green peppers', 'extra cheese')
+#Now we can replace the print statement with a loop that runs through the list
+#of toppings and describes the pizza being ordered.
+
+def make_pizza(*toppings):
+    """Summarzie the pizza we are about to make"""
+    print("\nMaking a pizza with the following toppings:")
+    for topping in toppings:
+        print('- ' + topping)
 
 
